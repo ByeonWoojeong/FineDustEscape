@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="mise.woojeong.com.mise.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"    >
+
+            <!-- 위치, 시간 -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="30dp">
+                <TextView
+                    android:id="@+id/textLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text=" "
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"/>
+                <TextView
+                    android:id="@+id/textNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:text="2018.7.14 12:29"/>
+            </LinearLayout>
+
+
+
+            <!-- 현재 상태 정보 -->
+            <LinearLayout
+                android:id="@+id/layoutCurrentInfo"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingBottom="50dp"
+                android:visibility="visible"
+                >
+                <ImageView
+                    android:id="@+id/imgCurrentState1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step1"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step2"/>
+
+                <ImageView
+                    android:id="@+id/imgCurrentState3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step3"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step4"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step5"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step6"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step7"/>
+                <ImageView
+                    android:id="@+id/imgCurrentState8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/step8"/>
+
+                <TextView
+                    android:id="@+id/textCurrentState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textColor="#ffffff"
+                    android:text="미세먼지 상태"/>
+            </LinearLayout>
+
+
+<!-- 상세 정보 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="#ffffff">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/naviBackgroundColor"
+                    android:text="현재 상세 정보"/>
+
+            </LinearLayout>
+
+
+
+<!-- 상세 수치 -->
+            <LinearLayout
+                android:id="@+id/layoutDetailInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/naviBackgroundColor">
+                <!-- 미세먼지(pm10) -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="미세먼지" />
+
+                    <TextView
+                        android:id="@+id/textPm10State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="상태" />
+
+                    <TextView
+                        android:id="@+id/textPm10Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0 µg/㎥" />
+                </LinearLayout>
+
+                <!-- 초미세먼지(pm25) -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="초미세먼지" />
+
+                    <TextView
+                        android:id="@+id/textPm25State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="상태" />
+
+                    <TextView
+                        android:id="@+id/textPm25Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0" />
+                </LinearLayout>
+
+                <!-- 이산화질소 -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="이산화질소" />
+
+                    <TextView
+                        android:id="@+id/textNo2State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="상태" />
+
+                    <TextView
+                        android:id="@+id/textNo2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0" />
+                </LinearLayout>
+                
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/layoutDetailInfo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/naviBackgroundColor">
+
+
+                <!-- 오존 -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="오존" />
+
+                    <TextView
+                        android:id="@+id/textO3State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="좋음" />
+
+                    <TextView
+                        android:id="@+id/textO3Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0.029 µg/㎥" />
+                </LinearLayout>
+
+                <!-- 일산화탄소 -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="일산화탄소" />
+
+                    <TextView
+                        android:id="@+id/textCoState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="좋음" />
+
+                    <TextView
+                        android:id="@+id/textCoValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0.029 µg/㎥" />
+                </LinearLayout>
+
+
+                <!-- 아황산가스 -->
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="12sp"
+                        android:textColor="#ffffff"
+                        android:text="아황산가스" />
+
+                    <TextView
+                        android:id="@+id/textSo2State"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15sp"
+                        android:textColor="#ffffff"
+                        android:text="좋음" />
+
+                    <TextView
+                        android:id="@+id/textSo2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="10sp"
+                        android:textColor="#ffffff"
+                        android:text="0.029 µg/㎥" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+</ScrollView>

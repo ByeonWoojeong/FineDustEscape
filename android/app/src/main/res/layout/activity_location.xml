@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:theme="@style/EditTheme"
+    tools:context="mise.woojeong.com.mise.LocationActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_location"
+        android:theme="@style/ToolbarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/naviBackgroundColor"
+        android:text="">
+
+        <TextView
+            android:id="@+id/toolbar_location_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            android:text="위치 검색" />
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:onClick="mOnClickBtnSearch"
+            android:background="@color/naviBackgroundColor"
+            android:textColor="#ffffff"
+            android:text="검색"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/btnSearch"
+            android:layout_marginRight="15dp"
+            android:background="#ffffff">
+            <EditText
+                android:id="@+id/editLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="동/읍/면 입력"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
