@@ -128,5 +128,8 @@ public class AlertActivity extends AppCompatActivity {
 
         //알람 예약
         am.set(AlarmManager.RTC_WAKEUP, time, sender);
+
+
+        // 오레오
     }
 }
