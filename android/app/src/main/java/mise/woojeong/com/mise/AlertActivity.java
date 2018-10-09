@@ -2,12 +2,15 @@ package mise.woojeong.com.mise;
 
 import android.app.AlarmManager;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -73,8 +76,6 @@ public class AlertActivity extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager)context.getSystemService(context.NOTIFICATION_SERVICE);
         Intent intent1 = new Intent(context.getApplicationContext(),MainActivity.class); //인텐트 생성.
 
-
-
         Notification.Builder builder = new Notification.Builder(context.getApplicationContext());
         intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //현재 액티비티를 최상으로 올리고, 최상의 액티비티를 제외한 모든 액티비티를 없앤다.
@@ -110,6 +111,25 @@ public class AlertActivity extends AppCompatActivity {
             setConentText : 푸시 내용
         */
 
+        //오레오 이상 채널 생성
+        if(Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O){
+            NotificationChannel notificationChannel = new NotificationChannel("alarm", "alarm", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationChannel.setDescription("channel description");
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.GREEN);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setVibrationPattern(new long[]{100});
+            notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+            notificationManager.createNotificationChannel(notificationChannel);
+
+            builder.setChannelId("alarm");
+
+        }
+        else {
+            
+        }
+
+
         notificationManager.notify(1, builder.build()); // Notification send
     }
 
@@ -129,7 +149,5 @@ public class AlertActivity extends AppCompatActivity {
         //알람 예약
         am.set(AlarmManager.RTC_WAKEUP, time, sender);
 
-
-        // 오레오
     }
 }
